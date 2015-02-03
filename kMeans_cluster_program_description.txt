@@ -1,0 +1,30 @@
+kMeans cluster identification
+
+Description of contents:
+
+kMeans_v4.py
+------------
+
+- Given a 2D set of points this program will uniquely identify clusters and plot their respective centers.
+- Here is the algorithm used:
+   -> For each point calculate its distance and angle from origin.
+   -> Generate array of size 26, where each element is a 1/26th the size of (maximum Angle - minimum Angle).
+   -> Each angle interval will contain the distance values for each point that fall in that angled slice.
+   -> For each angle interval (mentioned above) calculate number of points. 
+   -> Identify intervals with local maximum number of points.
+   -> For each local maxima find average distance value.
+   -> Calculate x, y coordinates from these distance and angle pairs. These are cluster center coordinates.
+
+kMeans_output.png
+-----------------
+
+- Top left plot shows distance values vs. angles for each point in input file. 
+   -> this also shows lines that correspond to angle intervals with maximum number of points.
+- Bottom left plot shows the same local maxima in terms of angle array indices alluded to in algorithm description.
+- Top right plot shows initial plot with line segments where vertices are cluster centers.
+
+testSet.txt
+-----------
+
+- X and Y values for each point is tabulated.
+- This file was used in chapter 10 of Machine Learning in Action by Peter Harrington.
